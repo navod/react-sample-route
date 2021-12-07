@@ -1,19 +1,24 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
+import Navbar from "./Navbar";
+import Explorer from "./screen/Explorer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutus*" element={<AboutUs />} />
-        <Route path="/contactus*" element={<ContactUs />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/aboutus*" element={<AboutUs />} />
+          <Route exact path="/contactus*" element={<ContactUs />} />
+          <Route exact path="/explorer*" element={<Explorer />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
