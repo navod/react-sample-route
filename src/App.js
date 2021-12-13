@@ -1,22 +1,28 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import AboutUs from "./AboutUs";
-import ContactUs from "./ContactUs";
-import Navbar from "./Navbar";
+import Home from "./screen/Home";
+import AboutUs from "./screen/AboutUs";
+import ContactUs from "./screen/ContactUs";
+import Navbar from "./config/Navbar";
 import Explorer from "./screen/Explorer";
+import { ConvetionContextProvider } from "./util/ConventionContext";
+import Profile from "./screen/Profile";
+import React from "react";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/aboutus*" element={<AboutUs />} />
-          <Route exact path="/contactus*" element={<ContactUs />} />
-          <Route exact path="/explorer*" element={<Explorer />} />
-        </Routes>
+        <ConvetionContextProvider>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/explorer" element={<Explorer />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </ConvetionContextProvider>
       </BrowserRouter>
     </div>
   );

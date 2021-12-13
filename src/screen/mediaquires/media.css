@@ -1,0 +1,15 @@
+@media all and (min-width: 900px) and (max-width: 1500px) {
+  .crete {
+    height: 20px !important;
+  }
+  .left {
+    margin-left: 10px !important;
+    width: 100px;
+  }
+  .howItWork {
+    width: 120px;
+  }
+  .signIn {
+    width: 100px;
+  }
+}

@@ -3,13 +3,14 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
+import Cards from "./Cards";
 
 export default function Home() {
   return (
     <div>
-      <Typography variant="h1" component="h1" color="green">
-        Home
-      </Typography>
+      <div style={{ height: 60 }}></div>
+
+      <Cards />
       <Stack spacing={2} direction="row">
         <Link to="/" style={{ textDecoration: "none" }}>
           <Button color="success" variant="outlined">
@@ -28,6 +29,8 @@ export default function Home() {
           </Button>
         </Link>
       </Stack>
+
+      <div style={{ height: 200 }}></div>
     </div>
   );
 }

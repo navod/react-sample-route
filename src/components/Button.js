@@ -4,10 +4,11 @@ import ButtonUnstyled, {
   buttonUnstyledClasses,
 } from "@mui/base/ButtonUnstyled";
 import { styled } from "@mui/system";
+import "../screen/mediaquires/media.css";
 
 const CustomButtonRoot = styled("span")`
-  background-color: #007fff;
-  padding: 15px 20px;
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  padding: 12px 20px 12px 20px;
   border-radius: 45px;
   color: #fff;
   font-weight: 600;
@@ -15,7 +16,8 @@ const CustomButtonRoot = styled("span")`
   font-size: 14px;
   transition: all 200ms ease;
   cursor: pointer;
-  box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 0 rgba(0, 127, 255, 0);
+  box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1),
+    0 0 0 0 rgba(255, 105, 135, 0.3);
   border: none;
 
   &:hover {
@@ -32,7 +34,7 @@ const CustomButtonRoot = styled("span")`
     outline: none;
   }
 
-  &.${buttonUnstyledClasses.disabled} {
+  &.${buttonUnstyledClasses.nocolor} {
     opacity: 0.5;
     cursor: not-allowed;
     box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
@@ -45,9 +47,8 @@ function CustomButton(props) {
 
 export default function UnstyledButtonsSpan() {
   return (
-    <Stack spacing={2} direction="row">
+    <Stack spacing={2} direction="row" className="create">
       <CustomButton>Create</CustomButton>
-      <CustomButton>Sign In</CustomButton>
     </Stack>
   );
 }
